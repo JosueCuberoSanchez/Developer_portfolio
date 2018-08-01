@@ -1,0 +1,30 @@
+/*
+This file contains the navbar styles.
+@author Josué Cubero Sánchez.
+*/
+
+header {
+  background-color: $nav-footer-background-color;
+  position: fixed;
+  z-index: 1;
+
+  .nav-item {
+
+    a:hover {
+      background-color: $nav-background-hover-color;
+      color: $nav-link-hover-color;
+    }
+  }
+
+  .active {
+    background-color: $nav-link-active-background-color;
+  }
+
+  .nav-link {
+    color: $nav-link-active-font-color;
+  }
+
+  .white-text {
+    color: $nav-footer-links-color;
+  }
+}

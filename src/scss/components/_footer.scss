@@ -1,0 +1,36 @@
+/*
+This file contains the footer styles.
+@author Josué Cubero Sánchez.
+*/
+
+footer {
+  background-color: $nav-footer-background-color;
+  color: $nav-footer-links-color;
+}
+
+ul {
+  list-style-type: none;
+}
+
+// Media queries for responsive layout
+
+@media only screen and (max-width: 992px) {
+
+  .contact-img {
+    width: 4%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .contact-img {
+    width: 5%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+
+  .contact-img {
+    width: 7%;
+  }
+}

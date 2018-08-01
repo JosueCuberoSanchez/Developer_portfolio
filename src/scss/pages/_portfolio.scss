@@ -1,0 +1,150 @@
+/*
+This file contains main page styles.
+@author Josué Cubero Sánchez.
+*/
+
+// Global styles
+
+body {
+  font-family: "Gentium Basic", serif;
+}
+
+a,
+u {
+  text-decoration: none !important;
+}
+
+h1 {
+  font-size: 45px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 35px;
+}
+
+p {
+  font-size: 30px;
+}
+
+.parallax {
+  background: url(../assets/img/parallax.png) no-repeat fixed center;
+  background-size: cover;
+  z-index: 0;
+}
+
+// Home styles
+
+.home__about {
+  padding-top: 23vh;
+}
+
+.home__parallax {
+  height: 100vh;
+}
+
+// Goals styles
+
+.goals {
+  padding-top: $main-section-padd-top;
+  padding-bottom: $main-section-padd-bottom;
+  background-color: $main-background-color;
+}
+
+.quote {
+  border: 5px solid;
+}
+
+// Experience styles
+
+.experience {
+  padding-top: $main-section-padd-top;
+  padding-bottom: $main-section-padd-bottom;
+}
+
+.experience__img {
+  width: 80%;
+}
+
+.experience__row {
+  margin-bottom: 10vh;
+}
+
+.education-img {
+  width: 80%;
+}
+
+// Contact styles
+
+#contact {
+  height: 100vh;
+  padding-top: $main-section-padd-top;
+  padding-bottom: $main-section-padd-bottom;
+  background-color: $main-background-color;
+}
+
+#map {
+  height: 70vh;
+  width: 90%;
+}
+
+.contact-img {
+  width: 3%;
+}
+
+// Media queries for responsive layout
+
+@media only screen and (max-width: 992px) {
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  p {
+    font-size: 15px;
+  }
+
+  .home__about {
+    padding-top: 10vh;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+
+  .experience__frontend-div {
+    border-right: $main-borders-color 3px solid;
+    border-left: $main-borders-color 3px solid;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+
+  .col-6 {
+    width: 50%;
+  }
+
+  .col-4 {
+    width: 33.333333%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+
+  .contact-img {
+    width: 7%;
+  }
+}

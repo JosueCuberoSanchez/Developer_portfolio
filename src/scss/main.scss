@@ -1,0 +1,17 @@
+/*
+This file contains what will be imported, linted and uglified to build.
+@author Josué Cubero Sánchez.
+*/
+
+//Helpers
+@import "helpers/variables";
+//Vendor
+@import "vendor/bootstrap";
+@import "font-awesome";
+//Mixins
+@import "mixins/sprite-mixin";
+//Components
+@import "components/navbar";
+@import "components/footer";
+//Pages
+@import "pages/portfolio";
