@@ -274,7 +274,7 @@ gulp.task('build', ['html', 'styles', 'js', 'bootstrap-js', 'jquery', 'assets', 
  * Deploys the app to GH pages.
  * @author Josué Cubero Sánchez.
 */
-gulp.task('deploy',['build'], function () {
+gulp.task('deploy', function () {
     return gulp.src("./build/**/*")
         .pipe(deploy())
 });
