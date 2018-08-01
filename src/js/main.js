@@ -18,16 +18,16 @@ This function is called each time a scroll is made. It will work to keep active 
 @author Josué Cubero Sánchez.
 */
 function onScroll(event) {
-    const scrollPos = $(document).scrollTop();
-    $('#nav__options li a').each(function() {
-        let currLink = $(this);
-        let refElement = $(currLink.attr('href'));
+    const scrollPos = $(document).scrollTop(); // scrolled pixels
+    $('#nav__options li a').each(function() { // for each anchor tag on nav bar
+        let currLink = $(this); // current anchor tag
+        let refElement = $(currLink.attr('href')); // href element
         if (refElement.position().top <= scrollPos
-            && refElement.position().top + refElement.height() > scrollPos) {
+            && refElement.position().top + refElement.height() > scrollPos) { // if its within scope, add the active class
             $('#nav__options li a').removeClass('active');
             currLink.addClass('active');
         } else {
-            currLink.removeClass('active');
+            currLink.removeClass('active'); // else if it's not on scope, remove active tag
         }
     });
 }
@@ -48,18 +48,17 @@ $(document).ready(function() {
     This listener will scroll the user to the clicked "page" on the navbar.
     @author Josué Cubero Sánchez.
     */
-    $('a[href^="#"]').on('click',function(event) {
+    $('a[href^="#"]').on('click',function(event) { // when a user clicks a link in navbar
         event.preventDefault();
         $(document).off('scroll');
 
-        $('#nav__options li a').each(function() {
+        $('#nav__options li a').each(function() { // remove active for ALL.
             $(this).removeClass('active');
         });
-        $(this).addClass('active');
+        $(this).addClass('active'); // add active to myself
 
-        const targetHash = this.hash;
-        let targetSection = $(targetHash);
-        $('html, body').stop().animate(
+        let targetSection = $(this.hash); // the id
+        $('html, body').stop().animate( // scroll to the desired section
             {'scrollTop': targetSection.offset().top + 2}, 500, 'swing',function() {
               $(document).on('scroll', onScroll);
             });

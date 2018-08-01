@@ -14,6 +14,7 @@ let syntax_scss = require('postcss-scss');
 let uglify = require('gulp-uglify');
 let eslint = require('gulp-eslint');
 let babel = require('gulp-babel');
+let deploy = require('gulp-gh-pages');
 
 /* Styles task.
  * Compiles main SaSS and sends CSS to build.
@@ -262,9 +263,18 @@ gulp.task('start',
     ['scss-lint', 'js-lint', 'html', 'styles', 'js', 'bootstrap-js','jquery', 'assets', 'font-awesome', 'favicon', 'server', 'watch'],
         cb => cb);
 
-/* Start deploy task.
- * Deploys the app.
+/* Build task.
+ * Builds the app.
  * @author Josué Cubero Sánchez.
 */
-gulp.task('deploy', ['html', 'styles', 'js', 'bootstrap-js', 'jquery', 'assets', 'font-awesome', 'favicon'],
+gulp.task('build', ['html', 'styles', 'js', 'bootstrap-js', 'jquery', 'assets', 'font-awesome', 'favicon'],
     cb => cb);
+
+/* Deploy task.
+ * Deploys the app to GH pages.
+ * @author Josué Cubero Sánchez.
+*/
+gulp.task('deploy',['build'], function () {
+    return gulp.src("./build/**/*")
+        .pipe(deploy())
+});
