@@ -5,13 +5,114 @@ This file contains what will be imported, linted and uglified to build.
 
 //Helpers
 @import "helpers/variables";
+// Components
+@import "components/contact";
+@import "components/experience";
+@import "components/footer";
+@import "components/goals";
+@import "components/home";
+@import "components/navbar";
 //Vendor
 @import "vendor/bootstrap";
 @import "font-awesome";
-//Mixins
-@import "mixins/sprite-mixin";
-//Components
-@import "components/navbar";
-@import "components/footer";
-//Pages
-@import "pages/portfolio";
+
+// Global styles
+
+html {
+  box-sizing: border-box;
+}
+
+body,
+button {
+  font-family: "Gentium Basic", serif;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+u {
+  text-decoration: none !important;
+}
+
+h1 {
+  font-size: 45px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 35px;
+}
+
+p {
+  font-size: 30px;
+}
+
+.parallax {
+  background: url(../assets/img/parallax.png) no-repeat fixed center;
+  background-size: cover;
+  z-index: 0;
+}
+
+// Media queries for responsive layout
+
+@media only screen and (max-width: 992px) {
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  p {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+
+  .col-6 {
+    width: 50%;
+  }
+
+  .col-4 {
+    width: 33.333333%;
+  }
+}

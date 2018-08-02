@@ -1,0 +1,29 @@
+// Experience styles
+
+.experience {
+  padding-top: $main-section-padd-top;
+  padding-bottom: $main-section-padd-bottom;
+
+  &__tech-img {
+    width: 80%;
+  }
+
+  &__row {
+    margin-bottom: 10vh;
+  }
+
+  &__education-img {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+
+  .experience {
+
+    &__frontend-div {
+      border-right: $main-borders-color 3px solid;
+      border-left: $main-borders-color 3px solid;
+    }
+  }
+}

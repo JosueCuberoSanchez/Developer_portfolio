@@ -22,7 +22,7 @@ npm install
 
 ## Built With
 
-* [Boostrap](https://getbootstrap.com/) - The styles library used.
+* [Bootstrap](https://getbootstrap.com/) - The styles library used.
 * [Gulp](https://gulpjs.com/) - Automation tool used for build, server simulation and deploy.
 
 

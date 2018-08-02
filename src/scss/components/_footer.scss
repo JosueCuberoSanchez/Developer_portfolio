@@ -12,25 +12,30 @@ ul {
   list-style-type: none;
 }
 
+
+.footer__img {
+  width: 3%;
+}
+
 // Media queries for responsive layout
 
 @media only screen and (max-width: 992px) {
 
-  .contact-img {
+  .footer__img {
     width: 4%;
   }
 }
 
 @media only screen and (max-width: 768px) {
 
-  .contact-img {
+  .footer__img {
     width: 5%;
   }
 }
 
 @media only screen and (max-width: 450px) {
 
-  .contact-img {
+  .footer__img {
     width: 7%;
   }
 }

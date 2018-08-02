@@ -1,0 +1,11 @@
+// Goals styles
+
+.goals {
+  padding-top: $main-section-padd-top;
+  padding-bottom: $main-section-padd-bottom;
+  background-color: $main-background-color;
+
+  &__quote {
+    border: 5px solid;
+  }
+}

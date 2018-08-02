@@ -26,10 +26,10 @@ gulp.task('styles', () => {
             includePaths: [
                 path.join(__dirname, 'node_modules/bootstrap/scss/'),
                 path.join(__dirname, 'node_modules/font-awesome/scss/'),
-                path.join(__dirname, 'src/scss')]
-            , outputStyle: 'compressed'
+                path.join(__dirname, 'src/scss')],
+             outputStyle: 'compressed'
         }))
-        .pipe(gulp.dest('build/css/'))
+        .pipe(gulp.dest('build/css/'));
 });
 
 /* HTML task.
@@ -37,7 +37,7 @@ gulp.task('styles', () => {
  * @author Josué Cubero Sánchez.
 */
 gulp.task('html', () => {
-    return gulp.src('src/**/*.html').pipe(gulp.dest('build/'))
+    return gulp.src('src/**/*.html').pipe(gulp.dest('build/'));
 });
 
 /* JS task.
@@ -50,7 +50,7 @@ gulp.task('js', () => {
             presets: ['env']
         }))
         .pipe(uglify())
-        .pipe(gulp.dest('build/'))
+        .pipe(gulp.dest('build/'));
 });
 
 /* Bootstrap JS task.
@@ -59,7 +59,8 @@ gulp.task('js', () => {
 */
 gulp.task('bootstrap-js', () => {
     return gulp.src('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')
-        .pipe(gulp.dest('build/js/'))});
+        .pipe(gulp.dest('build/js/'));
+});
 
 /* Jquery task.
  * Copies jquery min to build.
@@ -67,14 +68,15 @@ gulp.task('bootstrap-js', () => {
 */
 gulp.task('jquery', function() {
     return gulp.src('node_modules/jquery/dist/jquery.min.js')
-        .pipe(gulp.dest('build/js/'))});
+        .pipe(gulp.dest('build/js/'));
+});
 
 /* Assets task.
  * Copies assets to build.
  * @author Josué Cubero Sánchez.
 */
 gulp.task('assets', () => {
-    return gulp.src('assets/**/*.png').pipe(gulp.dest('build/assets/'))
+    return gulp.src('assets/**/*.png').pipe(gulp.dest('build/assets/'));
 });
 
 /* Font awesome task.
@@ -83,7 +85,7 @@ gulp.task('assets', () => {
 */
 gulp.task('font-awesome', () => {
     return gulp.src('node_modules/font-awesome/fonts/*')
-        .pipe(gulp.dest('build/fonts'))
+        .pipe(gulp.dest('build/fonts'));
 });
 
 /* Favicon task.
@@ -92,7 +94,7 @@ gulp.task('font-awesome', () => {
 */
 gulp.task('favicon', () => {
     return gulp.src('favicon.ico')
-        .pipe(gulp.dest('build/'))
+        .pipe(gulp.dest('build/'));
 });
 
 /* Watch task.
@@ -115,26 +117,26 @@ gulp.task('server', () => {
         .pipe(webserver({
             livereload: true,
             open: true
-        }))
+        }));
 });
 
 /* SCSS lint task.
  * Checks for SCSS code quality.
  * @author Josué Cubero Sánchez.
 */
-gulp.task("scss-lint", () => {
+gulp.task('scss-lint', () => {
 
     // Stylelint config rules
     const stylelintConfig = {
         rules: {
             'at-rule-empty-line-before': [ 'always', {
                 except: ['blockless-after-blockless'],
-                ignore: ['after-comment'],
+                ignore: ['after-comment']
             } ],
             'at-rule-name-case': 'lower',
             'at-rule-name-space-after': 'always-single-line',
-            "at-rule-no-unknown": [true, {
-                "ignoreAtRules": ["function", "if", "else", "each", "include", "mixin"]
+            'at-rule-no-unknown': [true, {
+                'ignoreAtRules': ['function', 'if', 'else', 'each', 'include', 'mixin']
             }],
             'at-rule-semicolon-newline-after': 'always',
             'block-closing-brace-newline-after': 'always',
@@ -145,12 +147,12 @@ gulp.task("scss-lint", () => {
             'color-hex-length': 'short',
             'color-named': 'never',
             'comment-empty-line-before': [ 'always', {
-                ignore: ['stylelint-commands'],
+                ignore: ['stylelint-commands']
             } ],
             'declaration-bang-space-after': 'never',
             'declaration-bang-space-before': 'always',
             'declaration-block-no-duplicate-properties': [ true, {
-                ignore: ['consecutive-duplicates'],
+                ignore: ['consecutive-duplicates']
             } ],
             'declaration-block-semicolon-newline-after': 'always',
             'declaration-block-semicolon-space-before': 'never',
@@ -159,27 +161,27 @@ gulp.task("scss-lint", () => {
             'declaration-colon-space-after': 'always-single-line',
             'declaration-colon-space-before': 'never',
             'declaration-property-unit-whitelist': {
-                'line-height': ['px'],
+                'line-height': ['px']
             },
             'font-family-name-quotes': 'always-where-recommended',
             'font-weight-notation': [ 'numeric', {
-                ignore: ['relative'],
+                ignore: ['relative']
             } ],
             'function-comma-space-after': 'always',
             'function-comma-space-before': 'never',
             'function-max-empty-lines': 1,
             'function-name-case': [ 'lower', {
-                ignoreFunctions: ['/^DXImageTransform.Microsoft.*$/'],
+                ignoreFunctions: ['/^DXImageTransform.Microsoft.*$/']
             } ],
             'function-parentheses-space-inside': 'never',
             'function-url-quotes': 'never',
             'function-whitespace-after': 'always',
-            indentation: 2, //this is for JetBrains default identation.
+            indentation: 2, // this is for JetBrains default identation.
             'length-zero-no-unit': true,
             'max-empty-lines': 2,
             'max-line-length': [ 80, {
                 ignore: 'non-comments',
-                ignorePattern: ['/(https?://[0-9,a-z]*.*)|(^description\\:.+)|(^tags\\:.+)/i'],
+                ignorePattern: ['/(https?://[0-9,a-z]*.*)|(^description\\:.+)|(^tags\\:.+)/i']
             } ],
             'media-feature-colon-space-after': 'always',
             'media-feature-colon-space-before': 'never',
@@ -194,7 +196,7 @@ gulp.task("scss-lint", () => {
             'number-no-trailing-zeros': true,
             'property-case': 'lower',
             'rule-empty-line-before': [ 'always', {
-                ignore: ['after-comment'],
+                ignore: ['after-comment']
             } ],
             'selector-attribute-brackets-space-inside': 'never',
             'selector-attribute-operator-space-after': 'never',
@@ -203,14 +205,14 @@ gulp.task("scss-lint", () => {
             'selector-class-pattern': [
                 '^[a-z]+(-[a-z]+)*',
                 {
-                    message: 'Selector should use lowercase and separate words with hyphens (selector-class-pattern)',
-                },
+                    message: 'Selector should use lowercase and separate words with hyphens (selector-class-pattern)'
+                }
             ],
             'selector-id-pattern': [
                 '^[a-z]+(-[a-z]+)*',
                 {
-                    message: 'Selector should use lowercase and separate words with hyphens (selector-id-pattern)',
-                },
+                    message: 'Selector should use lowercase and separate words with hyphens (selector-id-pattern)'
+                }
             ],
             'selector-combinator-space-after': 'always',
             'selector-combinator-space-before': 'always',
@@ -227,8 +229,8 @@ gulp.task("scss-lint", () => {
             'value-keyword-case': 'lower',
             'value-list-comma-newline-after': 'always-multi-line',
             'value-list-comma-space-after': 'always-single-line',
-            'value-list-comma-space-before': 'never',
-        } //taken from: https://github.com/WordPress-Coding-Standards/stylelint-config-wordpress/blob/master/index.js
+            'value-list-comma-space-before': 'never'
+        } // taken from: https://github.com/WordPress-Coding-Standards/stylelint-config-wordpress/blob/master/index.js
     };
 
     const processors = [
@@ -239,8 +241,8 @@ gulp.task("scss-lint", () => {
         })
     ];
 
-    return gulp.src(
-        ['src/scss/**/*.scss', '!src/scss/vendor/**/*.scss']).pipe(postcss(processors, {syntax: syntax_scss}));
+    return gulp.src(['src/scss/**/*.scss', '!src/scss/vendor/**/*.scss'])
+        .pipe(postcss(processors, {syntax: syntax_scss}));
 });
 
 
@@ -248,7 +250,7 @@ gulp.task("scss-lint", () => {
  * Checks for JS code quality.
  * @author Josué Cubero Sánchez.
 */
-gulp.task("js-lint", () => {
+gulp.task('js-lint', () => {
     return gulp.src(['src/**/*.js'])
         .pipe(eslint())
         .pipe(eslint.format())
@@ -263,18 +265,11 @@ gulp.task('start',
     ['scss-lint', 'js-lint', 'html', 'styles', 'js', 'bootstrap-js','jquery', 'assets', 'font-awesome', 'favicon', 'server', 'watch'],
         cb => cb);
 
-/* Build task.
- * Builds the app.
- * @author Josué Cubero Sánchez.
-*/
-gulp.task('build', ['html', 'styles', 'js', 'bootstrap-js', 'jquery', 'assets', 'font-awesome', 'favicon'],
-    cb => cb);
-
 /* Deploy task.
  * Deploys the app to GH pages.
  * @author Josué Cubero Sánchez.
 */
-gulp.task('deploy', function () {
-    return gulp.src("./build/**/*")
-        .pipe(deploy())
+gulp.task('deploy', function() {
+    return gulp.src('./build/**/*')
+        .pipe(deploy());
 });

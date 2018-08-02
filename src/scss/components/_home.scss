@@ -1,0 +1,22 @@
+// Home styles
+
+.home {
+
+  &__about {
+    padding-top: 23vh;
+  }
+
+  &__parallax {
+    height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .home {
+
+    &__about {
+      padding-top: 10vh;
+    }
+  }
+}
