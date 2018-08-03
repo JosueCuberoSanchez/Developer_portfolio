@@ -18,12 +18,12 @@ This function is called each time a scroll is made. It will work to keep active 
 @author Josué Cubero Sánchez.
 */
 function onScroll(event) {
-    const scrollPos = $(document).scrollTop(); // scrolled pixels
+    const top = $(document).scrollTop(); // scrolled pixels
     $('#nav__options li a').each(function() { // for each anchor tag on nav bar
         let currLink = $(this); // current anchor tag
         let refElement = $(currLink.attr('href')); // href element
-        if (refElement.position().top <= scrollPos
-            && refElement.position().top + refElement.height() > scrollPos) { // if its within scope, add the active class
+        if (refElement.position().top <= top
+            && refElement.position().top + refElement.height() > top) { // if its within scope, add the active class
             $('#nav__options li a').removeClass('active');
             currLink.addClass('active');
         } else {
